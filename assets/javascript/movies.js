@@ -62,7 +62,7 @@ game_object.items = [
 	{ 
 		"name": "operation fortune: ruse de guerre", 
 		"image": "wrinkle.jpg", 
-		"trailer": "https://www.youtube.com/embed/N9aItGzZxsU?&autoplay=1&loop=1" 
+		"trailer": "https://www.youtube.com/embed/N9aItGzZxsU?&autoplay=1&start=7&loop=1" 
 	},
 	{ 
 		"name": "minions: the rise of gru", 

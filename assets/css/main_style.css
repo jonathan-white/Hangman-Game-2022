@@ -53,7 +53,7 @@ h3{	font-size: 30px;}
 
 main {
 	display: flex;
-	flex-flow: row nowrap;
+	flex-flow: column;
 	margin: 0 auto;
 	position: relative;
 	width: 50%;
@@ -66,7 +66,6 @@ main {
 .content-holder {
 	flex: 0 1 auto;
 	position: relative;
-	width: 50%;
 	border: 4px dotted #fff;
 }
 
@@ -109,6 +108,7 @@ main {
 	word-spacing: .75em;
 	letter-spacing: .125em;
 	font-style: italic;
+    height: 35%;
 }
 
 .content-holder > ul,
@@ -423,8 +423,8 @@ footer a {
 	}
 }
 
-@media screen and (min-width: 768px){
+/* @media screen and (min-width: 768px){
 	.img-holder, .content-holder {
 		height: 70vh;
 	}
-}
+} */
