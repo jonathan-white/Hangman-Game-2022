@@ -1,0 +1,288 @@
+/*-------------------*/
+/*--Style Overrides--*/
+/*-------------------*/
+
+body {
+	background-color: #000;
+	background-image: url(../images/bg-metroid.jpg);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+.spacer {
+	display: block;
+	width: 20%;
+}
+
+.img-holder,
+.content-holder {
+	border: 4px double #fff;
+	background-color: rgba(0,0,0,0.8);
+	z-index: -1;
+}
+
+.img-holder img.kraid {
+	top: 10%;
+    left: 32%;
+    transform: scaleX(-1);
+}
+
+.output {
+	color: #777;
+}
+
+/*-----------*/
+/*--Metroid--*/
+/*-----------*/
+
+.metroid::before,
+.metroid::after {
+	content: '';
+	position: absolute;
+}
+
+.metroid {
+	position: absolute;
+	left: -50%; 
+	top: 50%;
+	width: 140px;
+	height: 110px;
+	background-color: #80ffff; 
+	background-repeat: no-repeat;	
+	background-image: 
+	    radial-gradient(ellipse at 20% -93%, rgba(255,255,255,0.2) 50%, transparent 50%), 
+	    repeating-radial-gradient(ellipse at 54% 72%, rgba(255,255,255,0.2) 0%, transparent 50%),
+	    radial-gradient(farthest-corner at 44% 44%, rgba(255,255,255,0.2) 50%, transparent 50%),
+	    radial-gradient(circle, #cc0080 50%, transparent 50%), 
+	    radial-gradient(farthest-corner at 44% 44%, rgba(255,255,255,0.2) 50%, transparent 50%),
+	    radial-gradient(circle, #cc0080 50%, transparent 50%), 
+	    radial-gradient(farthest-corner at 44% 44%, rgba(255,255,255,0.2) 50%, transparent 50%),
+	    radial-gradient(circle, #cc0055 50%, transparent 50%), 
+	    radial-gradient(ellipse at 50% 300%, #7b2a99 50%, transparent 50%), 
+	    radial-gradient(ellipse at 50% 280%, #7b6c99 50%, transparent 50%), 
+	    radial-gradient(ellipse at 50% 260%, #7b2a99 50%, transparent 50%), 
+	    radial-gradient(ellipse at 50% 230%, #7b6c99 50%, rgba(0,0,0,0.1) 50%), 
+	    radial-gradient(ellipse at 50% 100%, rgba(0,0,0,0.7) 40%, transparent 60%), 
+	    linear-gradient(to right, rgba(0,255,0,.3), rgba(0,255,0,0.3));
+	background-size: 41% 63%, 100% 106%,20% 20%, 50% 50%, 20% 20%, 50% 50%, 20% 20%, 50% 50%, 
+		100% 100%,100% 100%,100% 100%,100% 100%,100% 100%,100% 100%;
+	background-position: 24px 5px, 50% 100%,25px 57px,7% 95%,83px 57px, 93% 95%,
+		55px 32px, 50% 50%,0 0,0 0,0 0,0 0,	0 0,0 0;
+	border-top-left-radius: 110px;
+	border-top-right-radius: 110px;
+	border-bottom-left-radius: 50px;
+	border-bottom-right-radius: 50px;
+	box-shadow: inset 0 6px 0 10px #80ffff, 0 0 60px 2px #0ff; 
+	animation: float-mid 2s ease-in-out alternate infinite, moveright 10s ease-in-out alternate-reverse infinite;
+	z-index: initial;
+}
+
+.metroid::before {
+	width: 70%;
+	height: 95%;
+	left: 50%;
+	top: 34%;
+	margin-left: -2.9375rem;
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+	border-radius: 50%;
+	box-shadow: inset -1rem .4375rem 0 #f6ca51, inset 1rem .4375rem 0 #f6ca51;
+	animation: mandible_before 3s alternate-reverse infinite;
+	z-index: -1;
+}
+
+.metroid::after {
+	width: 45%;
+	height: 82%;
+	left: 63%;
+	top: 33%;
+	margin-left: -2.9375rem;
+	background-repeat: no-repeat;
+	background-position: 0 100%;
+	border-radius: 50%;
+	box-shadow: inset -.75rem .4375rem 0 #f6ca51, inset .75rem .4375rem 0 #f6ca51;
+	animation: mandible_after 3s alternate-reverse infinite;
+	z-index: -1;
+}
+
+@keyframes mandible_before {
+	100% {
+		width: 68%;
+		height: 61%;
+		top: 76%;
+		left: 50%
+	}
+}
+
+@keyframes mandible_after {
+	100% {
+		width: 45%;
+		height: 82%;
+		top: 36%;
+		left: 61%
+	}
+}
+
+.metroid.score {
+	visibility: hidden;
+	/*animation: 0;*/
+}
+
+.metroid.score::after {
+	content: '+100';
+	position: absolute;
+	font-size: 80px;
+	color: #f3c;
+	text-shadow: 0 0 20px #f3c;
+	box-shadow: none;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	visibility: visible;
+}
+
+.scoreholder {
+	/*display: inline-block;*/
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	font-size: 40px;
+	color: #f3c;
+	text-shadow: 0 0 20px #f3c;
+}
+
+.pos-0 { 
+	animation: float-high 2s ease-in-out alternate infinite, moveleft 10s ease-in-out alternate-reverse infinite; 
+}
+.pos-1 { 
+	animation: float-mid 2s ease-in-out alternate infinite, moveright 10s ease-in-out alternate-reverse infinite;
+}
+.pos-2 { 
+	animation: float-low 2s ease-in-out alternate infinite, moveright 10s ease-in-out alternate-reverse infinite;
+}
+
+.delay-0 { animation-delay: initial; }
+.delay-1 { animation-delay: 500ms; }
+.delay-2 { animation-delay: 700ms; }
+.delay-3 { animation-delay: 900ms; }
+.delay-4 { animation-delay: 1200ms; }
+.delay-5 { animation-delay: 1500ms; }
+.delay-6 { animation-delay: 1700ms; }
+.delay-7 { animation-delay: 1900ms; }
+.delay-8 { animation-delay: 2200ms; }
+.delay-9 { animation-delay: 2500ms; }
+
+@keyframes float-high {
+	0% {
+		top: 0;
+		height: 100px;
+	}
+
+	100% {
+		top: 35%;
+		height: 115px;
+	}
+}
+
+@keyframes float-mid {
+	0% {
+		top: 30%;
+		height: 100px;
+	}
+
+	100% {
+		top: 45%;
+		height: 115px;
+	}
+}
+
+@keyframes float-low {
+	0% {
+		top: 55%;
+		height: 100px;
+	}
+
+	100% {
+		top: 70%;
+		height: 115px;
+	}
+}
+
+@keyframes moveright {
+	0% {
+		left: -50%;
+	}
+
+	100%{
+		left: 120%;
+	}
+}
+
+@keyframes moveleft {
+	0% {
+		right: -50%;
+		left: initial;
+	}
+
+	100%{
+		right: 120%;
+		left: initial;
+	}
+}
+
+/*--------------------*/
+/*--Background Video--*/
+/*--------------------*/
+
+.video-background {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: -2;
+	animation: fade-out 1s 71s forwards;
+}
+
+.preview-video {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	background-size: cover;
+}
+
+@keyframes fade-out {
+	99.999% {
+		display: block;
+	}
+	100% {
+		opacity: 0;
+		display: none;
+	}
+}
+
+
+#preview {
+	display: inline;
+	margin-top: 50px;
+}
+
+@media screen and (max-width: 768px){
+	.scoreholder {
+		top: initial;
+		left: initial;
+		bottom: 20px;
+		right: 10px;
+		font-size: 30px;
+	}
+}

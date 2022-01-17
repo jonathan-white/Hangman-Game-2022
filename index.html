@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman Game</title>
+
+	<!-- Reset -->
+	<link rel="stylesheet" href="assets/css/reset.css">
+
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="assets/css/main_style.css">
+	<link id="cookies-css" rel="stylesheet" href="assets/css/cookies.css">
+</head>
+<body>
+	<header>
+		<h1 id="page-title">Cookies</h1>
+		<h2 id="page-subtitle">Can you guess the type of cookie?</h2>
+	</header>
+	<main>
+		<section class="img-holder">
+			<div>
+				<p id="status-title">Cookies</p>
+				<h3 id="status"></h3>
+			</div>
+			<div class="showcase">
+				<img id="image" src="assets/images/cookies.jpg" alt="cookies">
+				<iframe id="preview" width="290" height="163" src=""  
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+			</div>
+			<div class="curtain curtain-left-1"></div>
+			<div class="curtain curtain-left-2"></div>
+			<div class="curtain curtain-left-3"></div>
+			<div class="curtain curtain-right-1"></div>
+			<div class="curtain curtain-right-2"></div>
+			<div class="curtain curtain-right-3"></div>
+			<div class="spotlight"></div>
+		</section>
+		<section class="spacer"></section>
+		<section class="content-holder">			
+			<p>Press any key to get started!</p>				
+			<p id="wins" class="output">Wins</p>			
+			<p id="word-title">Current Cookie</p>
+			<ul id="word-showing">
+				<li id="letter-0" class="output"></li>
+			</ul>	
+			<p>Number of guesses remaining</p>
+			<p id="remaining-guesses" class="output">12</p>
+			<p>Letters already guessed</p>
+			<p id="guessed" class="output"></p>
+		</section>
+	</main>
+	<ul class="theme-options">
+		<li id="theme-1" class="active">Cookies</li>
+		<li id="theme-2">Movies</li>
+		<li id="theme-3">Metroid</li>
+	</ul>
+	<ul class="difficulty-options">
+		<li id="option-1" data-level="Easy">Easy</li>
+		<li id="option-2" data-level="Normal" class="active">Normal</li>
+		<li id="option-3" data-level="Hard">Hard</li>
+	</ul>
+	<div class="video-background">
+		<video id="bg-video" class="preview-video" preload="auto">
+			<source src="assets/video/metroidprime_e3_2001_medium.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div class="scoreholder">Score:</div>
+	<div class="cookie cookie-1"></div>
+	<div class="cookie cookie-2"></div>
+	<footer>
+		<a href="https://jonathan-white.github.io/">&copy; 2022 Jon White</a>
+	</footer>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="assets/javascript/game.js"></script>
+	<script>
+		game_object.initialize_game();
+	</script>
+	<script id="cookies-js" src="assets/javascript/cookies.js"></script>
+</body>
+</html>
